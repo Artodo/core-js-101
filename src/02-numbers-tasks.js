@@ -50,9 +50,9 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-// function getAverage(value1, value2) {ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
-//   return (value1 + value2) / 2;
-// }
+function getAverage(/* value1, value2 */) {
+
+}
 
 /**
  * Returns a distance between two points by cartesian coordinates.
