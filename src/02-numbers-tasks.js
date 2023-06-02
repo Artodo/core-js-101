@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
@@ -124,8 +125,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
 
 
@@ -140,8 +141,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return Number(value);
 }
 
 /**
@@ -157,8 +158,9 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  const num = a * a + b * b + c * c;
+  return Math.sqrt(num);
 }
 
 
@@ -200,9 +202,18 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  const sqrtnum = Math.floor(Math.sqrt(n));
+  let simple = n !== 1;
+  for (let i = 2; i < sqrtnum + 1; i++) {
+    if (n % i === 0) {
+      simple = false;
+      break;
+    }
+  }
+  return simple;
 }
+
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
@@ -219,8 +230,13 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  const numb = Number(value);
+  if (Object.is(numb, NaN)) {
+    return def;
+  }
+
+  return numb;
 }
 
 module.exports = {
